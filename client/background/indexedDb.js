@@ -1,3 +1,5 @@
+//WIP code. Currently unused.
+
 //params accepts title, version
 
 var createDB = function(params) {

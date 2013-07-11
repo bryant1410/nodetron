@@ -25,11 +25,10 @@
     this.worker.terminate();
   };
 
-  Worker.prototype.addMessageEvent = function(_id,cb) {
+  Worker.prototype._addMessageEvent = function(_id,cb) {
     var queue = this.eventQueue;
     if (_id && typeof queue[_id] === 'undefined') {
       queue[_id] = [];
-      // this.eventBuckets++;
     }
     if (typeof cb === 'function') {
       queue[_id].push(cb);
@@ -52,20 +51,12 @@
 
   //cb can be a function, or 'false' for promise (to be implemented)
   Worker.prototype.postMessageWithCallback = function(msg,cb) {
-    // if (typeof this.eventBuckets === 'undefined') {
-    //   this.eventBuckets = 0;
-    // }
     var _id = msg;
     if (typeof msg !== 'string') {
       _id = JSON.stringify(msg);
     }
-    // var _id = this.eventBuckets;
-    // this.eventBuckets++;
-    // var data = {
-    //   _id:_id,
-    //   msg:msg
-    // };
-    this.addMessageEvent(_id,cb);
+
+    this._addMessageEvent(_id,cb);
     this.worker.postMessage(msg);
   };
 
