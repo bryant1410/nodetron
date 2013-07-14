@@ -1,6 +1,6 @@
 #Nodetron
 
-**This project is under heavy development. Its API is subject to major, breaking changes.**
+**This project is under heavy development. Its API is subject to major changes.**
 
 A peer-to-peer, rich-client web app library that uses HTML5 WebRTC and Web Workers to reduce reliance on central servers and enable greater decentralization by routing requests directly to peers.
 
