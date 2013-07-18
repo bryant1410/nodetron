@@ -44,7 +44,7 @@ Technologies used: WebRTC, socket.io, MongoDB, node-restify.
 * To run the server, [install MongoDB](http://docs.mongodb.org/manual/installation/). If you're on a Mac, use homebrew!
 * For debugging, install global dependencies: `npm -g install node-inspector`
 * When working inside of the submodules of this project, make sure to checkout the correct branch.
-  * For `demo`, checkout `internal`.
+  * For `demo`, checkout `master`.
   * For `client/webrtc`, checkout `master`.
 * If you intend to run the `demo` app, be sure to follow [the submodule README instructions](https://github.com/bchu/nodetron-standhub).
 

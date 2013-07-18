@@ -5,4 +5,4 @@
 [submodule "demo"]
 	path = demo
 	url = https://github.com/bchu/nodetron-standhub.git
-	branch = internal
+	branch = master
