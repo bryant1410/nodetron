@@ -39,7 +39,7 @@ Technologies used: WebRTC, socket.io, MongoDB, node-restify.
 * `npm install && bower install` in the project root.
 * `git submodule init && git submodule update --remote`
   * `--remote` requires git version >=1.8
-  * Since this project is under continuous development, you may need to re-run the above the commands after pulling the lastest upstream changes.
+  * Since this project is under continuous development, you may need to re-run the above the commands after pulling the latest upstream changes.
 * To build the project (the client-side portion), run `grunt build`.
 * To run the server, [install MongoDB](http://docs.mongodb.org/manual/installation/). If you're on a Mac, use homebrew!
 * For debugging, install global dependencies: `npm -g install node-inspector`
