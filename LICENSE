@@ -24,6 +24,15 @@ THE SOFTWARE.
 
 The following libraries are licensed under the MIT License:
 
+PeerJS, node-uuid, q, socket.io, mongoose, restify
+
+PeerJS: Copyright (c) 2013 Michelle Bu and Eric Zhang, http://peerjs.com
+node-uuid: Copyright (c) 2010 Robert Kieffer
+q: Copyright 2009–2012 Kristopher Michael Kowal. All rights reserved.
+socket.io: Copyright (c) 2010 LearnBoost &lt;dev@learnboost.com&gt;
+mongoose: Copyright (c) 2010 LearnBoost &lt;dev@learnboost.com&gt;
+restify: Copyright (c) 2012 Mark Cavage
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
