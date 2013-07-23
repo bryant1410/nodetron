@@ -21,8 +21,9 @@ if (typeof console === 'undefined') {
       msg = func;
       func = '';
     }
-    postMessage(typeof func === 'string' && func || JSON.stringify(func)||({}).toString.call(func));
-    postMessage(typeof msg === 'string' && func || JSON.stringify(msg)||({}).toString.call(msg));
+    var toString = Object.prototype.toString;
+    postMessage(typeof func === 'string' && func || JSON.stringify(func)||toString.call(func));
+    postMessage(typeof msg === 'string' && func || JSON.stringify(msg)||toString.call(msg));
   };
 }
 // ** END DEBUG
