@@ -120,7 +120,7 @@ module.exports = function (grunt) {
         tasks:['build']
       },
       client: {
-        files: ['<%= clientFolder %>/**/**/*'],
+        files: ['<%= clientFolder %>/**'],
         options: {
           livereload:LIVERELOAD_PORT,
           keepalive:true,
