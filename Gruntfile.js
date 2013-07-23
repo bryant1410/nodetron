@@ -134,7 +134,7 @@ module.exports = function (grunt) {
     concat: {
       basic: {
         dest:'dist/nodetron.js',
-        src: ['client/webrtc/dist/peer.js','client/background/workerExternalEvents.js','client/intro.js','client/*.js','!client/debug.js','!client/outro.js','client/background/workerExternal.js','client/outro.js']
+        src: ['client/webrtc/dist/peer.js','client/background/workerExternalEvents.js','client/intro.js','client/utils.js','client/*.js','!client/debug.js','!client/outro.js','client/background/workerExternal.js','client/outro.js']
       }
     },
     uglify: {

@@ -39,14 +39,14 @@ nodetron.registerWithServer = function(options){
   };
 
   socket.on('users', function (data) {
-    if(options.debug){console.log(data);}
+    _debug(data);
     socket.emit('acknowledge', {received: true});
   });
-  if (options.debug) {
+  _debug(function(){
     socket.on('message', function(data){
       console.log('Nodetron: ',data);
     });
-  }
+  });
 
   registered = true;
 };
@@ -82,15 +82,15 @@ nodetron.login = function(options) {
   var peer = nodetron.self = new Peer(id, nodetron._options, nodetron.socket);
 
   peer.on('error', function(err){
-    if(options.debug){console.log('Got an error:', err);}
+    _debug('Got an error:', err);
   });
 
   peer.on('close', function(err){
-    if(options.debug){console.log('Connection closed', err);}
+    _debug('Connection closed', err);
   });
 
   peer.on('open', function(id){
-    if(options.debug){console.log('Connection Opened, User ID is', id);}
+    _debug('Connection Opened, User ID is', id);
   });
 };
 

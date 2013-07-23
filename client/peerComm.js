@@ -36,7 +36,7 @@ var connectionHandler = function(conn){
   });
 
   conn.on('data', function(data){
-    if(nodetron.debug){console.log('Got DataChannel data:', data);}
+    _debug('Got DataChannel data:', data);
     //handle responses to requests.
     var id = data.id;
     if (responseQueue[id]) {
@@ -49,7 +49,7 @@ var connectionHandler = function(conn){
     }
   });
   conn.on('error', function(err){
-    if(nodetron.debug){console.log('Got DataChannel data:', err);}
+    _debug('Got DataChannel data:', err);
   });
 };
 
