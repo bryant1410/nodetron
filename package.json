@@ -25,6 +25,7 @@
   "bugs": {
     "url": "https://github.com/bchu/nodetron/issues"
   },
+  "license": "MIT",
   "readmeFilename": "README.md",
   "main": "server/server.js",
   "scripts": {

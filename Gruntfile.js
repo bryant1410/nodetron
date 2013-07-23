@@ -9,6 +9,11 @@ var livereloadMiddleware = function (connect, options) {
     connect.directory(options.base)
   ];
 };
+var banner = '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+'* <%= pkg.homepage %>/\n' +
+'* Copyright (c) <%= grunt.template.today("yyyy") %>\n' +
+'* <%= pkg.contributors %>\n' +
+'* Licensed under the <%= pkg.license %> license */\n';
 
 module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -130,8 +135,10 @@ module.exports = function (grunt) {
     },
 
     // build process:
-    // Note: concat also has a footer and banner property.
     concat: {
+      options: {
+        banner: banner
+      },
       basic: {
         dest:'dist/nodetron.js',
         src: ['client/webrtc/dist/peer.js','client/background/workerExternalEvents.js','client/intro.js','client/utils.js','client/*.js','!client/debug.js','!client/outro.js','client/background/workerExternal.js','client/outro.js']
@@ -141,9 +148,7 @@ module.exports = function (grunt) {
       min: {
         options: {
           preserveComments: false,
-          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-            '* <%= pkg.homepage %>/\n' +
-            '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>; Licensed <%= pkg.license %> */\n'
+          banner: banner
         },
         files: {
           'dist/nodetron.min.js': '<%= concat.basic.dest %>'
