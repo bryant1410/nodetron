@@ -201,7 +201,7 @@ NodetronServer.prototype._configureWS = function(socket, key, id, token) {
 // checks that proper api key is provided, initializes and updates the cache of client/outstanding keys
 // stores ips
 NodetronServer.prototype._checkKey = function(key, ip, cb) {
-  if (key == this._options.key) {
+  if (key === this._options.key) {
     if (!this._clients[key]) {
       this._clients[key] = {};
     }

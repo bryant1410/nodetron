@@ -1,10 +1,10 @@
 // request listeners
 var requestQueue = {
-    get:[],
-    post:[],
-    put:[],
-    delete:[]
-  };
+  get:[],
+  post:[],
+  put:[],
+  delete:[]
+};
 
 // response listeners (listeners added to this object after a request has been sent)
 var responseQueue = {};
@@ -25,7 +25,7 @@ var eventifyConnection = function(conn, ignoreMetadata) {
   // self-initiated connections are passed back to the peer.on('connection') callback,
   if (!ignoreMetadata) {
     var data = conn.metadata;
-    data && requestHandler(data,conn);
+    data && requestHandler(data, conn);
   }
 };
 // Handler for connection events. Handles 'data', 'open', and 'error' events.
@@ -124,7 +124,7 @@ nodetron.requestPeerResource = function(target,query,callback) {
   if (typeof callback === 'function') {
     responseQueue[requestId] = callback;
   }
-  return  {
+  return {
     connection: target,
     requestId: requestId
   };
