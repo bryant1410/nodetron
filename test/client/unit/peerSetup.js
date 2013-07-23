@@ -1,4 +1,4 @@
-//naive implementation of socket stub method.
+// naive implementation of socket stub method.
 var socketStub =  {};
 socketStub.triggers = {};
 
@@ -39,7 +39,7 @@ describe('findPeer', function(){
     var queryId;
     var called = false;
 
-    //swap out the websocket
+    // swap out the websocket
     nodetron.socket = socketStub;
 
     nodetron.socket.on('query_for_user', function(data){

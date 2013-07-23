@@ -49,7 +49,7 @@
     }
   };
 
-  //cb can be a function, or 'false' for promise (to be implemented)
+  // cb can be a function, or 'false' for promise (to be implemented)
   Worker.prototype.postMessageWithCallback = function(msg,cb) {
     var _id = msg;
     if (typeof msg !== 'string') {

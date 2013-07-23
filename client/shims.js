@@ -1,5 +1,5 @@
-//native support: Chrome 5, Firefox 5, IE 9, Safari 5
-//see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+// native support: Chrome 5, Firefox 5, IE 9, Safari 5
+// see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
   Object.keys = (function () {
     var hasOwnProperty = Object.prototype.hasOwnProperty,
@@ -35,8 +35,8 @@ if (!Object.keys) {
 }
 
 
-//native support: Chrome 7, Firefox 4, IE 9, Safari 5.1.4
-//see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+// native support: Chrome 7, Firefox 4, IE 9, Safari 5.1.4
+// see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 if (!Function.prototype.bind) {
   Function.prototype.bind = function (oThis) {
     if (typeof this !== "function") {

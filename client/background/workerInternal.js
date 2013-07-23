@@ -16,7 +16,7 @@ if (typeof console !== 'undefined') {
 if (typeof console === 'undefined') {
   console = {};
   console.log = function(func,msg) {
-    //first argument must be the method origin
+    // first argument must be the method origin
     if (arguments.length === 1) {
       msg = func;
       func = '';
@@ -27,7 +27,7 @@ if (typeof console === 'undefined') {
 }
 // ** END DEBUG
 
-//init
+// init
 // importScripts('shims.js');
 window = self;
 importScripts('../components/indexedDBShim/dist/IndexedDBShim.min.js');
@@ -98,7 +98,7 @@ var initDb = function(data) {
     storeNames = db.objectStoreNames;
     attachSockets();
   },function() {
-    //show an alert to user!
+    // show an alert to user!
   });
 };
 
@@ -115,7 +115,7 @@ addEventListener('message', function(event) {
     socket = io.connect(data.serverUrl);
   }
   if (data.init) {
-    //throw exception if no title or no version
+    // throw exception if no title or no version
     initDb(data);
   }
 });

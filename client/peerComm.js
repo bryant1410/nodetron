@@ -97,9 +97,9 @@ nodetron.requestPeerResource = function(target,query,callback) {
   if (typeof query.resource === 'undefined' && typeof query.id === 'undefined') {
     throw new Error('No resource requested');
   }
-  //default method is 'get'
+  // default method is 'get'
   query.method = query.method || 'get';
-  //unique id for the request
+  // unique id for the request
   var requestId = query.id || nodetron.uuid.v4();
   var metadata = {
     method:query.method,
@@ -109,7 +109,7 @@ nodetron.requestPeerResource = function(target,query,callback) {
     id:requestId
   };
 
-  //target is now a DataConnection instance
+  // target is now a DataConnection instance
   if (typeof target === 'object') {
     target = nodetron.startPeerConnection(target.clientId, metadata);
   }
@@ -120,7 +120,7 @@ nodetron.requestPeerResource = function(target,query,callback) {
     target.send(metadata);
   }
 
-  //set callback for any responses that have the requestId
+  // set callback for any responses that have the requestId
   if (typeof callback === 'function') {
     responseQueue[requestId] = callback;
   }
@@ -142,7 +142,7 @@ var Response = function(req, conn) {
   this.connection = conn; //DataConnection
   this._id = req.id;
 };
-//send a response with a message and data.
+// send a response with a message and data.
 Response.prototype.send = function(msg,data) {
   var obj = {
     id:this._id,
@@ -151,11 +151,11 @@ Response.prototype.send = function(msg,data) {
   };
   this.connection.send(obj);
 };
-//send a response with the 'accept' message
+// send a response with the 'accept' message
 Response.prototype.accept = function(data) {
   this.send('accept',data);
 };
-//send a response with the 'deny' message
+// send a response with the 'deny' message
 Response.prototype.deny = function(data) {
   this.send('deny',data);
 };

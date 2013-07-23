@@ -129,8 +129,8 @@ module.exports = function (grunt) {
       }
     },
 
-    //build process:
-    //Note: concat also has a footer and banner property.
+    // build process:
+    // Note: concat also has a footer and banner property.
     concat: {
       basic: {
         dest:'dist/nodetron.js',
@@ -157,8 +157,8 @@ module.exports = function (grunt) {
 
 
 
-  //takes any number of arguments: a task-argument chain to run
-  //grunt automatically splits a string on the colon character, passes those in as separate arguments.
+  // takes any number of arguments: a task-argument chain to run
+  // grunt automatically splits a string on the colon character, passes those in as separate arguments.
   grunt.registerTask('delayed', 'delayed', function () {
     var done = this.async();
     var args = [].join.call(arguments,':');
@@ -168,7 +168,7 @@ module.exports = function (grunt) {
     }, 400);
   });
 
-  //should accept all, all:<num>, all:debug, or all:<num>:debug
+  // should accept all, all:<num>, all:debug, or all:<num>:debug
   grunt.registerTask('all', 'Run server and one or more clients on different ports.', function(arg1,arg2) {
     var tasks = ['concurrent','all'];
     //all:debug
@@ -176,16 +176,16 @@ module.exports = function (grunt) {
       tasks[1]+='debug';
     }
 
-    //parse first argument (sets how many clients to run)
+    // parse first argument (sets how many clients to run)
     var num = parseInt(arg1,10);
     if (grunt.util.kindOf(num)==='number' && !isNaN(num)) {
       var arr = [];
-      //start at 1 because we already run delayed:client
+      // start at 1 because we already run delayed:client
       for (var i = 1 ; i<num; i++) {
         arr.push('delayed:addclient:'+i);
       }
       var prop = tasks.join('.') + '.tasks';
-      //insert arr right before the last element of the tasks list in grunt's config object
+      // insert arr right before the last element of the tasks list in grunt's config object
       var list = grunt.config.get(prop);
       list.splice.apply(list,[list.length-1,0].concat(arr));
       grunt.config.set(prop, list);
@@ -194,7 +194,7 @@ module.exports = function (grunt) {
     grunt.task.run(task);
   });
 
-  //modify grunt's config to add connect and open tasks that have port numbers that increment up by 'count'
+  // modify grunt's config to add connect and open tasks that have port numbers that increment up by 'count'
   var addEntryToConfig = function(baseTaskName, count) {
     var connect = grunt.config.get('connect');
     var open = grunt.config.get('open');
@@ -231,11 +231,11 @@ module.exports = function (grunt) {
   grunt.registerTask('server:debug', [
     'concurrent:debug'
   ]);
-  //simplemocha is for server tests
+  // simplemocha is for server tests
   grunt.registerTask('server:unit', [
     'simplemocha'
   ]);
-  //karma is for client tests
+  // karma is for client tests
   grunt.registerTask('client:unit', [
     'karma:unit'
   ]);
@@ -250,7 +250,7 @@ module.exports = function (grunt) {
     'uglify'
   ]);
 
-  //TODO - push files down to demo
+  // TODO - push files down to demo
   grunt.registerTask('build-demo', [
     'concat',
     'uglify',

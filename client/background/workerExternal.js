@@ -18,5 +18,5 @@ nodetron.init = function(params) {
   });
 };
 
-//to pass objects by reference, do worker.postMessage(data, <array of ArrayBuffers>);
-//https://zapier.com/engineering/intro-to-web-workers/
+// to pass objects by reference, do worker.postMessage(data, <array of ArrayBuffers>);
+// https://zapier.com/engineering/intro-to-web-workers/

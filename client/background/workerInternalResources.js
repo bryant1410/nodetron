@@ -1,6 +1,6 @@
 var router = function(msg) {
   // var method = msg.method;
-  var resource = msg.resource; //model, type, resource
+  var resource = msg.resource; // model, type, resource
   if (!resource) {
     return false;
   }

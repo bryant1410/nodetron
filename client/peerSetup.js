@@ -30,7 +30,7 @@ nodetron.registerWithServer = function(options){
   var socket = io.connect(host+':'+port);
   nodetron.socket = socket;
 
-  //data stored for the login function, should not be modified
+  // data stored for the login function, should not be modified
   nodetron._options = {
     port:port,
     config:config,
@@ -67,9 +67,9 @@ nodetron.login = function(options) {
   var key = options.key || 'default';
   var metadata = options.userData;
 
-  //token must be unique per id AND per connection
-  //on a new connection, you can generate a new token even if using the same id
-  token = token || nodetron.uuid.v4(); //random token to auth this connection/session
+  // token must be unique per id AND per connection
+  // on a new connection, you can generate a new token even if using the same id
+  token = token || nodetron.uuid.v4(); // random token to auth this connection/session
 
   nodetron.socket.emit('login', {
     key:key,
@@ -111,7 +111,6 @@ nodetron.findPeer = function(queryParam, callback){
   var dispatchResponse = function(queryResponse){
     console.log("Received queryResponse from Server");
     if(nodetron.activeQueries[queryResponse.queryId]){
-      //fire the callback
       nodetron.activeQueries[queryResponse.queryId](queryResponse.users);
       delete nodetron.activeQueries[queryId];
     }
