@@ -62,7 +62,7 @@ Technologies used: WebRTC, socket.io, MongoDB, node-restify.
 
 If you get a `Error: Cannot find module './build/Debug/DTraceProviderBindings'` error, remove `restify` from your local `node_modules` folder and re-run `npm install` in the project root.
 
-More resources:
+**Before contributing, read the [contribution guidelines](https://github.com/bchu/nodetron/blob/master/docs/Contributing.md/)**
 
 1. Workflow instructions at <https://github.com/bchu/nodetron/wiki/Workflow>
 
