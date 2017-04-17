@@ -1,4 +1,4 @@
-#Notes on Different Approaches
+# Notes on Different Approaches
 
 *This doc is somewhat outdated (i.e. some of these approaches are considered unfeasible)*.
 
@@ -6,7 +6,7 @@
 
 1. In most WebRTC implementations, a central server is necessary as a standard "signaling" server that passes along users' requests for connections with each other (there are libraries for this). In the standard model of web applications, that server also is going to store personally identifiable and private info about you - phone numbers, emails, passwords, etc. We want an approach that minimizes involvement of a central server. One challenge is to find a way for one app to somehow run a query (either p2p or through a server) like so: "connect me with the user whose email is __," since we want data to be decentralized, it would be ideal if the server didn't know the email.
 
-##Project Goals
+## Project Goals
 
 At the outset of this program, we set out to create:
 
@@ -24,7 +24,7 @@ At the outset of this program, we set out to create:
     * depending on protocol, routes requests
     * allows peers to discover each-other based on the metadata they make public.
 
-###Potential solutions and their associated benefits / disadvantages
+### Potential solutions and their associated benefits / disadvantages
 
 1. Central server stores personally identifiable information in a DB. All queries are handled against this DB. Server routes you. We try to minimize the amount of personal info available, but you still have to authenticate against this server, and give it some private info.
     * __pro__: some privacy (chats, photos, etc), access redundancy (if you know how to connect with someone already)
@@ -61,7 +61,7 @@ __Other potential approaches outside of the buckets above:__
 3. Assume everyone is anonymous and set up interactions with that assumption.
 4. Implement a Facebook OpenGraph-like protocol where people are responsible for hosting a reference to their info (or piggybback off of facebook open graph);
 
-###Musings on Distributed Hash Tables (DHTs):
+### Musings on Distributed Hash Tables (DHTs):
 
 A DHT is a hash table that is split up among all the users (with some redundancy). When you want to find a key in the DHT, you search all the nodes you know about (or some optimized subset). The usual optimization is to have some sort of distance function that gives you log(n) lookup time (a la binary search) you only search nodes that are "closer" (by some computed function) to the key you want. Those nodes pass along the search. There are open source implementations the could potentially be used here.
 

@@ -1,10 +1,10 @@
-##Nodetron API Reference
+## Nodetron API Reference
 
 A comprehensive reference to Nodetron APIs.  This document is divided into two sections: __Section 1__ covers interactions between the client and the server.  __Section 2__ covers clients communicating directly with eachother over WebRTC. __Section 3__ covers setting up the server.
 
-###SECTION 1: Server-client communication:
+### SECTION 1: Server-client communication:
 
-####First, register your client with the server via:
+#### First, register your client with the server via:
 
      nodetron.registerWithServer(options)
 
@@ -24,7 +24,7 @@ A comprehensive reference to Nodetron APIs.  This document is divided into two s
 
 After calling `nodetron.registerWithServer`, you can access the underlying socket.io connection through `nodetron.socket`.
 
-####Next, login with a user:
+#### Next, login with a user:
 
     nodetron.login(options)
 
@@ -44,16 +44,16 @@ After calling `nodetron.registerWithServer`, you can access the underlying socke
 
 You should also use this function to update user data on the server (e.g. you want to change the user name from "John" to "Sarah").
 
-####Next, find and connect to more users!
+#### Next, find and connect to more users!
 Give Nodetron some query parameters (based on the arbitrary `userData` each client publishes).
 
      nodetron.findPeer(query, callback);
 
 Query parameters can be anything the application developer chooses.  Just specify one or more key-value pairs and an array of matching `Peer` objects (if any) will be passed to the callback;
 
-###SECTION 2: Inter-client communication:
+### SECTION 2: Inter-client communication:
 
-#####Requesting resources from other clients
+##### Requesting resources from other clients
 
 Once the application has discovered peers that satisfy your query, request resources from other peers with:
 
@@ -127,12 +127,12 @@ Since multiple request handlers can be registered on a method, the requestHandle
 * __nodetron.socket__: retrieve the current socket.io object.
 * __nodetron.debug__: flag that indicates whether Nodetron is in debug mode. Toggle this to enable/disable verbose logging.
 
-###SECTION 3: Setting up the server:
-#####Installation
+### SECTION 3: Setting up the server:
+##### Installation
 [Install MongoDB](http://docs.mongodb.org/manual/installation/). If you're on Mac, we recommend you use homebrew.
 Run `npm install nodetron`
 
-#####Creating the server
+##### Creating the server
 
     var Nodetron = require('nodetron').NodetronServer;
     var options = {port: 5000, debug: true};

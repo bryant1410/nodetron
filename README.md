@@ -1,18 +1,18 @@
-#Nodetron
+# Nodetron
 
 **This project is under heavy development. Many features are only partially implemented. Its API is subject to major changes.**
 
 A peer-to-peer, rich-client web app library that uses HTML5 WebRTC and Web Workers to reduce reliance on central servers and enable greater decentralization by routing requests directly to peers.
 
-####[Full API Documentation](https://github.com/bchu/nodetron/blob/master/docs/API.md/)
-####[Notes on Different Approaches](https://github.com/bchu/nodetron/blob/master/docs/Approach.md/)
-####[Future Roadmap](https://github.com/bchu/nodetron/blob/master/docs/Roadmap.md/)
+#### [Full API Documentation](https://github.com/bchu/nodetron/blob/master/docs/API.md/)
+#### [Notes on Different Approaches](https://github.com/bchu/nodetron/blob/master/docs/Approach.md/)
+#### [Future Roadmap](https://github.com/bchu/nodetron/blob/master/docs/Roadmap.md/)
 
 <br>
-####[Play with the demo app](http://demo.nodetron.com)
+#### [Play with the demo app](http://demo.nodetron.com)
 <br>
 
-###Overview
+### Overview
 
 Nodetron helps you easily create peer-to-peer applications that do more than just send chats or transfer files. Nodetron consists of a routing and discovery system with which developers can build rich client-side apps that control all user data locally. With Nodetron, all data validation and access permissions are delegated to and handled by the client. Developers are encouraged to then take advantage of IndexedDB, AppCache, and other HTML 5 APIs. In the future, Nodetron will feature tighter integration with those kinds of rich-client APIs.
 
@@ -73,11 +73,11 @@ If you get a `Error: Cannot find module './build/Debug/DTraceProviderBindings'` 
   * WebSQL shim for Safari and mobile
 * WebRTC: no IE, FF20+, CH26+, no Safari.
 
-###Current Prototype Implementation
+### Current Prototype Implementation
 
 Clients send 'discovery queries' to a central server/database. The server responds with potential matches. Clients then contact the matches directly over a WebRTC connection that is brokered by the server. Clients then freely exchange information. Clients specify what information they make publicly available for discovery on the central server. Clients are also responsible for granting or denying access over WebRTC.
 
-###Possible Advantages:
+### Possible Advantages:
 
 * Privacy - outside parties cannot inspect private info
 * Data access redundancy - if central server goes down you can still exchange data with others.
@@ -88,13 +88,13 @@ Clients send 'discovery queries' to a central server/database. The server respon
 * Client must be active (browser window open) to send/receive requests.
 * Greater decentralization exposes the peer network (as a whole) to malicious attacks.
 
-##Acknowledgments:
+## Acknowledgments:
 
 The client-side WebRTC code includes a forked version of PeerJS (<https://github.com/peers/peerjs>).
 
 The Nodetron server code is also a heavily modified fork of PeerJS's PeerServer (<https://github.com/peers/peerjs-server>). Thanks to their great work!
 
-##License:
+## License:
 
 [Nodetron is released under the MIT license](https://github.com/bchu/nodetron/blob/master/LICENSE).
 
